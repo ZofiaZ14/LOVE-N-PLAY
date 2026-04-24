@@ -49,6 +49,7 @@
             letter-spacing: 1px;
             font-weight: 500;
             line-height: 1.5;
+            padding: 0 20px;
         }
 
         .highlight-names { font-weight: 700; color: #000; }
@@ -100,6 +101,7 @@
         .card:hover {
             transform: translateY(-15px);
             box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .card-image-preview {
@@ -128,12 +130,11 @@
             color: #000;
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(10px);
             z-index: 2000;
         }
@@ -152,11 +153,12 @@
         }
 
         .modal-image-full { width: 100%; height: 100%; object-fit: cover; }
-        .modal-info { padding: 60px; overflow-y: auto; }
+        .modal-info { padding: 60px; overflow-y: auto; display: flex; flex-direction: column; justify-content: center; }
+        
         .close-btn {
             position: absolute; top: 30px; right: 30px;
             padding: 15px 25px; background: #000; color: #fff;
-            border: none; cursor: pointer; border-radius: 12px; font-weight: 800;
+            border: none; cursor: pointer; border-radius: 12px; font-weight: 800; z-index: 2100;
         }
 
         .tag-orange { background: var(--pastel-orange); color: #e65100; }
@@ -168,6 +170,14 @@
             h1 { font-size: 3rem; }
             .modal-content-wrapper { grid-template-columns: 1fr; height: auto; }
             .modal-image-full { height: 300px; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--text-muted);
+            font-weight: 700;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -184,14 +194,18 @@
 </header>
 
 <div class="main-project-container">
-    <img src="LINK_GITHUB_IMG_5090.jpg" alt="Murales Palestra Panoramica" class="main-project-img">
+    <img src="https://github.com/IL_TUO_UTENTE/IL_TUO_REPO/blob/main/IMG_5090.jpg?raw=true" alt="Murales Palestra Panoramica" class="main-project-img">
 </div>
 
 <div class="project-intro">
-    Questa sezione del progetto "The Open Book" celebra i valori dello sport e dell'energia. Il murales, situato presso la palestra della sede Curiel, rappresenta la vitalità dei giovani e l'importanza del movimento come strumento di crescita e aggregazione.
+    Questa sezione del progetto "The Open Book" celebra i valori dello sport e dell'energia. Il murales, situato presso la palestra della sede Curiel, rappresenta la vitalità dei giovani e l'importanza del movimento come strumento di crescita, disciplina e aggregazione.
 </div>
 
 <div class="container" id="gallery"></div>
+
+<footer>
+    Progetto di Street Art Scolastica &copy; 2024
+</footer>
 
 <div id="modal" class="modal" onclick="closeModal()">
     <div class="modal-content-wrapper" onclick="event.stopPropagation()">
@@ -199,8 +213,8 @@
         <img id="m-img" class="modal-image-full" src="" alt="">
         <div class="modal-info">
             <div id="m-tag" class="category-tag"></div>
-            <h2 id="m-title" style="font-family: 'Playfair Display', serif; font-size: 3rem; margin: 20px 0;"></h2>
-            <p id="m-desc" style="font-size: 1.1rem; color: #333; line-height: 1.8;"></p>
+            <h2 id="m-title" style="font-family: 'Playfair Display', serif; font-size: 3rem; margin: 20px 0; color: #000;"></h2>
+            <p id="m-desc" style="font-size: 1.2rem; color: #333; line-height: 1.8;"></p>
         </div>
     </div>
 </div>
@@ -211,29 +225,29 @@
             title: "Energia Dinamica",
             category: "Movimento",
             tag: "tag-orange",
-            img: "LINK_GITHUB_IMG_5087.jpg",
-            desc: "I colori caldi e le forme fluide rappresentano l'esplosione di energia tipica dell'attività sportiva. Un invito a non fermarsi mai e a superare i propri limiti fisici e mentali."
+            img: "https://github.com/IL_TUO_UTENTE/IL_TUO_REPO/blob/main/IMG_5087.jpg?raw=true",
+            desc: "L'opera cattura l'esplosione di energia tipica dell'attività fisica. Le forme dinamiche e i colori vibranti invitano gli studenti a vivere il movimento come un momento di libertà e potenza creativa."
         },
         {
-            title: "Equilibrio",
-            category: "Disciplina",
+            title: "Focus e Disciplina",
+            category: "Equilibrio",
             tag: "tag-blue",
-            img: "LINK_GITHUB_IMG_5088.jpg",
-            desc: "Lo sport non è solo forza, ma anche controllo e concentrazione. Questa sezione del murales richiama la necessità di trovare un equilibrio interiore attraverso l'allenamento costante."
+            img: "https://github.com/IL_TUO_UTENTE/IL_TUO_REPO/blob/main/IMG_5088.jpg?raw=true",
+            desc: "Questa sezione si concentra sulla concentrazione necessaria nello sport. Rappresenta l'equilibrio tra corpo e mente, fondamentale per affrontare le sfide sia in campo che tra i banchi di scuola."
         },
         {
-            title: "Spirito di Squadra",
-            category: "Collaborazione",
+            title: "Il Collettivo",
+            category: "Unione",
             tag: "tag-green",
-            img: "LINK_GITHUB_IMG_5089.jpg",
-            desc: "L'intreccio di linee e figure simboleggia il gioco di squadra. Nella palestra, come nella vita scolastica, la collaborazione tra compagni è il segreto per raggiungere i traguardi più ambiziosi."
+            img: "https://github.com/IL_TUO_UTENTE/IL_TUO_REPO/blob/main/IMG_5089.jpg?raw=true",
+            desc: "Il murales evidenzia l'importanza del gruppo. Lo sport è condivisione e appartenenza; qui le figure si intrecciano per ricordare che nessun traguardo si raggiunge mai davvero da soli."
         },
         {
-            title: "Passione Sportiva",
-            category: "Dedizione",
+            title: "Resilienza",
+            category: "Forza",
             tag: "tag-red",
-            img: "LINK_GITHUB_IMG_5091.jpg",
-            desc: "Il rosso acceso sottolinea la passione che anima gli studenti durante le ore di educazione fisica, trasformando la palestra in un luogo di espressione e libertà."
+            img: "https://github.com/IL_TUO_UTENTE/IL_TUO_REPO/blob/main/IMG_5091.jpg?raw=true",
+            desc: "Un tributo alla determinazione. I toni decisi simboleggiano la capacità di rialzarsi e perseverare, trasformando la fatica dell'allenamento in orgoglio e crescita personale."
         }
     ];
 
@@ -246,7 +260,7 @@
             <div class="card-content">
                 <span class="category-tag ${item.tag}">${item.category}</span>
                 <h3>${item.title}</h3>
-                <p>${item.desc.substring(0, 90)}...</p>
+                <p>${item.desc.substring(0, 95)}...</p>
             </div>
         `;
         card.onclick = () => {
